@@ -19,6 +19,7 @@
 #./masars
 
 # --- MASARS Script ---
+set -m
 if [ "$EUID" -eq 0 ]; then
 	echo 'This script should NOT be ran as root. Exiting.'
 	exit 1
