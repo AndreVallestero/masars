@@ -24,7 +24,7 @@ if [ "$EUID" -eq 0 ]; then
 	echo 'This script should NOT be ran as root. Exiting.'
 	exit 1
 fi
-sudo sh -c '"%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
+sudo sh -c 'echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
 sudo pacman --noconfirm -S base-devel pigz pbzip2 zstd stow upower alsa-utils light bemenu termite sway
 cd ~
 git clone https://github.com/AndreVallestero/manjaro-arm-sway-dotfiles.git
