@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 # --- Install Manjaro ARM Minimal ---
 #git clone https://gitlab.manjaro.org/manjaro-arm/applications/manjaro-arm-installer
