@@ -19,7 +19,6 @@
 #./masars
 
 # --- MASARS Script ---
-set -m
 if [ "$EUID" -eq 0 ]; then
 	echo 'This script should NOT be ran as root. Exiting.'
 	exit 1
@@ -36,6 +35,5 @@ cd ../yay
 makepkg --noconfirm -sirc
 sudo rm -R ~/yay ~/masars
 yay --noconfirm -S i3status-rust-git nerd-fonts-noto-sans-mono
-chmod a+w /sys/class/backlight/*/*
 sudo sed -i '$ d' /etc/sudoers
 echo 'MASARS complete, please reboot for all changes to take effect'
