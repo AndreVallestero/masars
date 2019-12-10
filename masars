@@ -35,5 +35,6 @@ cd ../yay
 makepkg --noconfirm -sirc
 sudo rm -R ~/yay ~/masars
 yay --noconfirm -S i3status-rust-git nerd-fonts-noto-sans-mono
+sudo chmod a+w /sys/class/backlight/*/*
 sudo sed -i '$ d' /etc/sudoers
 echo 'MASARS complete, please reboot for all changes to take effect'
