@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# --- Install Manjaro ARM Minimal ---
+#git clone https://gitlab.manjaro.org/manjaro-arm/applications/manjaro-arm-installer
+#cd manjaro-arm-installer
+#chmod +x manjaro-arm-installer
+#sudo -s
+#bash manjaro-arm-installer
+
+# --- Pre-Script Setup ---
+#ip a
+#sudo -s
+#wpa_supplicant -B -i $WINTERFACE -c <(wpa_passphrase $SSID $PASSWORD)
+#exit
+#sudo pacman -S networkmanager git
+#git clone https://github.com/andrevallestero/masars
+#cd masars
+#chmod a+x masars
+#./masars
+
+# --- MASARS Script ---
+if [ "$EUID" -eq 0 ]; then
+	echo 'This script should NOT be ran as root. Exiting.'
+	exit 1
+fi
+sudo sh -c '"%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
+sudo pacman --noconfirm -S base-devel pigz pbzip2 zstd stow upower alsa-utils light bemenu termite sway
+cd ~
+git clone https://github.com/AndreVallestero/manjaro-arm-sway-dotfiles.git
+git clone https://aur.archlinux.org/yay.git 
+rm -R .bashrc .bash_profile .makepkg.conf
+cd manjaro-arm-sway-dotfiles
+stow .
+cd ../yay
+makepkg --noconfirm -sirc
+sudo rm -R ~/yay ~/masars
+yay --noconfirm -S i3status-rust-git nerd-fonts-noto-sans-mono
+chmod a+w /sys/class/backlight/*/*
+sudo sed -i '$ d' /etc/sudoers
+echo 'MASARS complete, please reboot for all changes to take effect'
