@@ -24,11 +24,12 @@ if [ "$EUID" -eq 0 ]; then
 	exit 1
 fi
 sudo sh -c 'echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
-sudo pacman --noconfirm -S base-devel pigz pbzip2 zstd stow upower alsa-utils light bemenu termite sway
+sudo pacman --noconfirm -S base-devel pigz pbzip2 zstd stow upower alsa-utils light bemenu termite sway neovim
 cd ~
 git clone https://github.com/AndreVallestero/manjaro-arm-sway-dotfiles.git
-git clone https://aur.archlinux.org/yay.git 
+git clone https://aur.archlinux.org/yay.git
 rm -R .bashrc .bash_profile .makepkg.conf
+mkdir -p .config
 cd manjaro-arm-sway-dotfiles
 stow .
 cd ../yay
