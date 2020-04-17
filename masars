@@ -1,11 +1,14 @@
 #! /bin/bash
 
 # --- Install Manjaro ARM Minimal ---
+# Update and upgrade system packages
 #git clone https://gitlab.manjaro.org/manjaro-arm/applications/manjaro-arm-installer
 #cd manjaro-arm-installer
 #chmod +x manjaro-arm-installer
 #sudo -s
 #bash manjaro-arm-installer
+# If any dependencies are missing, install them:
+# 	bash, wget, git, systemd, dialog, parted, libarchive, binfmt-qemu-static, openssl, gawk, dosfstools, polkit
 
 # --- Pre-Script Setup ---
 #ip a
