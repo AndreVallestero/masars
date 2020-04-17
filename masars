@@ -8,7 +8,7 @@
 #sudo -s
 #bash manjaro-arm-installer
 # If any dependencies are missing, install them:
-# 	bash, wget, git, systemd, dialog, parted, libarchive, binfmt-qemu-static, openssl, gawk, dosfstools, polkit
+# 	base-devel, bash, wget, git, systemd, dialog, parted, libarchive, binfmt-qemu-static, openssl, gawk, dosfstools, polkit
 
 # --- Pre-Script Setup ---
 #ip a
