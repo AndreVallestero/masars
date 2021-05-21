@@ -27,6 +27,7 @@ if [ "$EUID" -eq 0 ]; then
 	exit 1
 fi
 #sudo sh -c 'echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
+pacman-mirrors
 sudo pacman --noconfirm -S base-devel stow upower alsa-utils pulseaudio light bemenu-wayland foot sway neovim yay i3status-rust
 cd ~
 git clone https://github.com/AndreVallestero/manjaro-arm-sway-dotfiles.git
