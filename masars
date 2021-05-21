@@ -2,7 +2,7 @@
 
 # --- Install Manjaro ARM Minimal ---
 # Update and upgrade system packages
-#git clone https://gitlab.manjaro.org/manjaro-arm/applications/manjaro-arm-installer
+#git clone --depth 1 https://gitlab.manjaro.org/manjaro-arm/applications/manjaro-arm-installer
 #cd manjaro-arm-installer
 #chmod +x manjaro-arm-installer
 #sudo -s
@@ -16,7 +16,7 @@
 #wpa_supplicant -B -i $WINTERFACE -c <(wpa_passphrase $SSID $PASSWORD)
 #exit
 #sudo pacman -S networkmanager git
-#git clone https://github.com/andrevallestero/masars
+#git clone --depth 1 https://github.com/andrevallestero/masars
 #cd masars
 #chmod a+x masars
 #./masars
@@ -30,7 +30,7 @@ fi
 pacman-mirrors
 sudo pacman --noconfirm -S base-devel stow upower alsa-utils pulseaudio light bemenu-wayland foot sway neovim yay i3status-rust
 cd ~
-git clone https://github.com/AndreVallestero/manjaro-arm-sway-dotfiles.git
+git clone --depth 1 https://github.com/AndreVallestero/manjaro-arm-sway-dotfiles.git
 rm .bashrc .bash_profile .makepkg.conf
 mkdir -p .config
 cd manjaro-arm-sway-dotfiles
