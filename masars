@@ -27,18 +27,15 @@ if [ "$EUID" -eq 0 ]; then
 	exit 1
 fi
 sudo sh -c 'echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
-sudo pacman --noconfirm -S base-devel pigz pbzip2 zstd stow upower alsa-utils pulseaudio light bemenu termite sway neovim
+sudo pacman --noconfirm -S base-devel stow upower alsa-utils pulseaudio light bemenu-wayland foot sway neovim yay i3status-rust
 cd ~
 git clone https://github.com/AndreVallestero/manjaro-arm-sway-dotfiles.git
-git clone https://aur.archlinux.org/yay.git
-rm -R .bashrc .bash_profile .makepkg.conf
+rm .bashrc .bash_profile .makepkg.conf
 mkdir -p .config
 cd manjaro-arm-sway-dotfiles
 stow .
-cd ../yay
-makepkg --noconfirm -sirc
-sudo rm -R ~/yay ~/masars
-yay --noconfirm -S i3status-rust-git nerd-fonts-noto-sans-mono
+sudo rm -R ~/masars
+yay --noconfirm -S nerd-fonts-ubuntu-mono
 sudo chmod a+w /sys/class/backlight/*/*
 sudo sed -i '$ d' /etc/sudoers
 echo 'MASARS complete, please reboot for all changes to take effect'
