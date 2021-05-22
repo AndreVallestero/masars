@@ -30,7 +30,7 @@ fi
 sudo pacman --noconfirm -S base-devel stow upower alsa-utils pulseaudio light bemenu-wayland foot sway neovim yay i3status-rust
 cd ~
 git clone --depth 1 https://github.com/AndreVallestero/manjaro-arm-sway-dotfiles.git
-rm .bashrc .bash_profile .makepkg.conf
+rm -R .bashrc .bash_profile .makepkg.conf
 mkdir -p .config
 cd manjaro-arm-sway-dotfiles
 stow .
