@@ -26,7 +26,7 @@ if [ "$EUID" -eq 0 ]; then
 	echo 'This script should NOT be ran as root. Exiting.'
 	exit 1
 fi
-#sudo sh -c 'echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
+sudo sh -c 'echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
 sudo pacman --noconfirm -S base-devel stow upower alsa-utils pulseaudio light bemenu-wayland sway neovim yay i3status-rust
 cd ~
 git clone --depth 1 https://github.com/AndreVallestero/manjaro-arm-sway-dotfiles.git
@@ -37,5 +37,5 @@ stow .
 sudo rm -R ~/masars
 sudo chmod a+w /sys/class/backlight/*/*
 yay --noconfirm -S foot nerd-fonts-ubuntu-mono
-#sudo sed -i '$ d' /etc/sudoers
+sudo sed -i '$ d' /etc/sudoers
 echo 'MASARS complete, please reboot for all changes to take effect'
